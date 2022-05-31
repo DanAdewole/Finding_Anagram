@@ -14,8 +14,12 @@ def read_file_content(filename):
 def count_words():
     text = read_file_content("./story.txt")
     # [assignment] Add your code here
-    from collections import Counter
-    word_count = Counter(text)
+    word_count = {}
+    words_in_text = text.split()
+
+    for word in words_in_text:
+        occurrence = words_in_text.count(word)
+        word_count[word] = occurrence
 
     return word_count
 
